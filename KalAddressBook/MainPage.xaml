@@ -1,4 +1,5 @@
 ﻿<Page
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     x:Class="KalAddressBook.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -15,9 +16,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <RelativePanel>
-           
+
             <Button 
             Name="HamburgerButton" 
             RelativePanel.AlignLeftWithPanel="True"
@@ -37,9 +38,13 @@
             Click="BackButton_Click"
             >
                 <Image Source="Assets/Icons/icons8-home-48.png"/>
-                </Button>
+            </Button>
+            <TextBlock Text="ADDRESS BOOK" Height="45" FontFamily="Verdana" 
+                       FontSize="20" Foreground="BlueViolet"
+                       FontStyle="Oblique" RelativePanel.AlignHorizontalCenterWithPanel ="True" />
+
         </RelativePanel>
-        <SplitView Grid.Row="1"
+        <SplitView Grid.Row="1" 
                    Name="ContentSplitView"
                    DisplayMode="CompactOverlay"
                    
@@ -52,18 +57,50 @@
                           ItemClick="MenuItemsListView_ItemClick">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:MenuItem">
-                            <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
-                                <!--Image Source="{x:Bind IconFile}" Height="20" Width="20" Margin="-10,0,0,0"/-->
-                                <TextBlock Text="{x:Bind Category}" FontSize="12" Margin="10,0,0,0"/>
-                            </StackPanel>
+                            <!--StackPanel Orientation="Horizontal" Margin="0,10,0,10"-->
+                            <!--Image Source="{x:Bind IconFile}" Height="20" Width="20" Margin="-10,0,0,0"/-->
+                            <TextBlock Text="{x:Bind Category}" FontSize="12" Margin="10,0,0,0"/>
+                            <!--/StackPanel-->
                         </DataTemplate>
                     </ListView.ItemTemplate>
+
                 </ListView>
+
+
             </SplitView.Pane>
-           
+            <SplitView.Content>
+                <Grid Margin="20,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="ContactList"
+                               Text="All Contacts"
+                               FontSize="24"/>
+                    <GridView Grid.Row="1">
+
+                        <ListView Name="ContactsListView" Margin="100"
+                          IsItemClickEnabled="True"
+                          ItemsSource="{x:Bind contacts}" 
+                          ItemClick="ContactsListView_ItemClick">
+                            <ListView.ItemTemplate > 
+                            <DataTemplate  x:DataType="data:Contact">
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                                    <!--Image Source="{x:Bind IconFile}" Height="20" Width="20" Margin="-10,0,0,0"/-->
+                                    <TextBlock Text="{x:Bind Name}" FontSize="12" Margin="10,0,0,0"/>
+
+                                    <TextBlock Text="{x:Bind Phone1}" FontSize="12" Margin="20,0,0,0"/>
+                                    <TextBlock Text="{x:Bind Address}" FontSize="12" Margin="20,0,0,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+                    </GridView>
+                </Grid>
+            </SplitView.Content>
         </SplitView>
-                   
-                   
+
 
     </Grid>
 </Page>

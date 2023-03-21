@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using KalAddressBook.Models;
+using Microsoft.Toolkit.Uwp.UI.Controls;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -81,7 +82,83 @@ namespace KalAddressBook
             }); menuItems.Add(new MenuItem
             {
                 IconFile = "Assets/Icons/iconB.png",
-                Category = ContactCategory.J
+                Category = ContactCategory.K
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.L
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.M
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.N
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.O
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.P
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.Q
+
+            }); menuItems.Add(new MenuItem
+            {
+                IconFile = "Assets/Icons/iconB.png",
+                Category = ContactCategory.R
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.S
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.T
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.U
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.R
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.V
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.W
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.X
+
+            });
+            menuItems.Add(new MenuItem
+            {
+                Category = ContactCategory.Z
+
 
             });
             BackButton.Visibility=Visibility.Collapsed;
@@ -105,7 +182,8 @@ namespace KalAddressBook
         {
             var menuItem = (MenuItem)e.ClickedItem;
             ContactManager.GetContactsByCategory(contacts, menuItem.Category);
-                //CategoryTextBlock.Text = menuItem.Category.ToString();
+            //CategoryTextBlock.Text = menuItem.Category.ToString();
+           
             BackButton.Visibility=Visibility.Visible;
 
         }
@@ -119,6 +197,11 @@ namespace KalAddressBook
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             ContentSplitView.IsPaneOpen = !ContentSplitView.IsPaneOpen;
+        }
+
+        private void ContactsListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

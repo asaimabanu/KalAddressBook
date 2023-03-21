@@ -29,12 +29,12 @@ namespace KalAddressBook.Models
         private static List<Contact> getContacts()
         {
             var contacts = new List<Contact>();
-            contacts.Add(new Contact("Ana",ContactCategory.A));
-            contacts.Add(new Contact("Apple", ContactCategory.A));
-            contacts.Add(new Contact("Anisha", ContactCategory.A));
-            contacts.Add(new Contact("Bob", ContactCategory.B));
-            contacts.Add(new Contact("Bider", ContactCategory.B));
-            contacts.Add(new Contact("Brian", ContactCategory.B));
+            contacts.Add(new Contact("Ana",ContactCategory.A,"9893309708","8221 waverlylane"));
+            contacts.Add(new Contact("Apple", ContactCategory.A, "9893309708", "8221 waverlylane"));
+            contacts.Add(new Contact("Anisha", ContactCategory.A, "9893309708", "8221 waverlylane"));
+            contacts.Add(new Contact("Bob", ContactCategory.B, "9893309708", "8221 waverlylane"));
+            contacts.Add(new Contact("Bider", ContactCategory.B, "9893309708", "8221 waverlylane"));
+            contacts.Add(new Contact("Brian", ContactCategory.B, "9893309708", "8221 waverlylane"));
 
             return contacts;
         }

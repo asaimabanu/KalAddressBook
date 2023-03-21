@@ -13,23 +13,24 @@ namespace KalAddressBook.Models
     {
 
         public string Name { get; set; }
-        public string phone1 { get; set; }
+        public string Phone1 { get; set; }
         public string IconFile { get; set; }
        
-       public string email { get; set; }
+       public string Email { get; set; }
 
-        public string address { get; set; }
+        public string Address { get; set; }
 
-        public int zipcode { get; set; }
+        public int Zipcode { get; set; }
 
         public ContactCategory Category { get; set; }
-        public Contact(string name, ContactCategory category)
+        public Contact(string name, ContactCategory category,string phone1,string address)
         {
             Name = name;
             Category = category;
-            IconFile = $"/Assets/Icons/{category}/{name}.png";
-            //phone1 = "8583309876";
-            //email = "asaima@gmail.com";
+            Phone1 = phone1;
+            Address = address;
+            
+            ;
          
 
         }
